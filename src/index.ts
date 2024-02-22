@@ -14,7 +14,7 @@ interface AddJobQueryString {
 
 const run = async () => {
   const welcomeEmailQueue = createQueue('WelcomeEmailQueue');
-  const processQueue = new Queue('process');
+  const processQueue = createQueue('process');
   await setupQueueProcessor(welcomeEmailQueue.name);
 
   const server: FastifyInstance<Server, IncomingMessage, ServerResponse> =
